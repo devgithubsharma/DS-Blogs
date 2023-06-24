@@ -7,10 +7,11 @@ export const register = (req,res) =>{
     //CHECKING EXISTING USER
     const q = "SELECT * FROM users WHERE email = ? OR username = ?";
     db.query(q,[req.body.email,req.body.username], (err,data)=>{
+
         if(err){
             return res.status(500).json(err);
-            
         }
+        
         if(data.length) return res.status(409).json("User already exists!");
 
         
@@ -47,7 +48,7 @@ export const login = (req,res) =>{
         if(data.length===0){
             return res.status(404).json("User not found!");
         }
-
+        
         // CHECK PASSWORD
         const isPasswordCorrect = bcrypt.compareSync(req.body.password,data[0].password);
 
@@ -58,12 +59,12 @@ export const login = (req,res) =>{
         res.cookie("access_token",token,{
             httpOnly:true
         }).status(200).json(other);
-
-
-
     })
 };
 
 export const logout = (req,res) =>{
-
+    res.clearCookie("access_token",{
+        sameSite:"none",
+        secure:true
+    }).status(200).json("User has been logged out!")
 };

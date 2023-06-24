@@ -40,7 +40,7 @@ export function Register() {
         <input required type='password' placeholder='password' name='password' onChange={handleChange}></input>
         <button onClick={handleSubmit}>Register</button>
         {err && <p>{err} </p>}
-        <span>Do you have an account? <Link to="/login">Login</Link></span>
+        <span>Do you have an account? <Link className='link' to="/login">Login</Link></span>
       </form>
     </div>
   )

@@ -1,11 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Hammersmith+One&family=League+Spartan:wght@300&family=Raleway:wght@100&family=Saira+Stencil+One&family=Source+Serif+4:wght@300&display=swap');
 $lightbrown:#A48E6C;
 $lightblue:#419B7B;
+$spotOne: #7b55da;
+$spotTwo: #084c95;
+$spotThree: #0fafba;
 .app{
     display: flex;
     justify-content: center;
+    font-family: 'Hammersmith One', sans-serif;
+    
+    
     .container{
         width: 1024px;
-
+        
         .link{
             text-decoration: none;
             color: inherit;
@@ -33,11 +40,11 @@ $lightblue:#419B7B;
 
             h1{
                 font-size: 35px;
-                color: #18130b;
+                color: #fff;
                 margin-bottom: 20px;
                   
             }
-    
+            
             form{
                 display: flex;
                 flex-direction: column;
@@ -45,6 +52,7 @@ $lightblue:#419B7B;
                 background-color: white;
                 width: 200px;
                 gap: 20px;
+                border-radius: 18px;
               
 
                 input{
@@ -103,25 +111,54 @@ $lightblue:#419B7B;
                 .logo{
                     img{
                         width: 120px;
+                        margin-left: -16px;
                     }
                 }
                 .links{
                     display: flex;
                     align-items: center;
                     gap: 10px;
+                    font-weight: 500;
                 }
 
                 h6{
-                    font-size: 16px;
-                    font-weight: 300;
+                    font-size: 17px;
+                    font-weight: 500;
+                    color: #fff;
+                    line-height: 30px;
+                    -webkit-font-smoothing: antialiased;
+                    -moz-osx-font-smoothing: grayscale;
+                    background-image: linear-gradient( 160deg, $spotThree, $spotTwo );
+                    width: 105px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    flex-direction: row;
+                    gap: 15px;
+                    border-radius: 30px;
+                    cursor: pointer;
+                    user-select: none;
+                    position: relative;
+                    transition: box-shadow 0.6s;
+                }
+                h6:hover{
+                box-shadow: 
+                0 0 10px 2px $spotTwo,
+                0.2rem 0.2rem 30px mix(rgb(67, 64, 64), $spotOne, 50%);
                 }
 
                 span{
                     cursor: pointer;
+                    color: black ;
+                }
+                span:hover{
+                    color:#076486 ;
+                    font-weight: 600;
+                    font-size: 16px;
                 }
 
                 .write{
-                    background-color: $lightbrown;
+                    background-color: #076486;
                     margin-top: 6px;
                     width: 50px;
                     height: 50px;
@@ -130,6 +167,7 @@ $lightblue:#419B7B;
                     align-items: center;
                     justify-content: center;
                     font-weight: 400;
+                    color: white;
                     border: 1px solid white;
 
                     &:hover{
@@ -163,6 +201,7 @@ $lightblue:#419B7B;
                 display: flex;
                 flex-direction: column;
                 gap: 150px;
+                
             }
 
             .post{
@@ -202,7 +241,41 @@ $lightblue:#419B7B;
 
                     h1{
                         font-size: 42px;
+                        background-image: linear-gradient(
+                                to right,
+                                #2d4bce,
+                                #058c5a 50%,
+                                #000 50%
+                            );
+
+                            background-size: 200% 100%;
+                            background-position: -100%;
+                            display: inline-block;
+                            padding: 5px 0;
+                            position: relative;
+                            -webkit-background-clip: text;
+                            -webkit-text-fill-color: transparent;
+                            transition: all 0.3s ease-in-out;
                     }
+                    h1:before{
+                        content: '';
+                        background: #106483;
+                        display: block;
+                        position: absolute;
+                        bottom: -3px;
+                        left: 0;
+                        width: 0;
+                        height: 3px;
+                        transition: all 0.3s ease-in-out;
+                      }
+
+                      h1:hover {
+                        background-position: 0;
+                       }
+                       
+                       h1:hover::before{
+                         width: 100%;
+                       }
 
                     p{
                         font-style: 18px;
@@ -282,7 +355,7 @@ $lightblue:#419B7B;
 
                 h1{
                     font-size: 40px;
-                    color: #614609dc;
+                    color: #136a8a;
                 }
                 p{
                     text-align: justify;
@@ -377,7 +450,6 @@ $lightblue:#419B7B;
 
             .item{
                 border: 1px solid rgba(211, 211, 211, 0.822);
-                // padding: 10px;
                 padding-top: 12px;
                 padding-left: 8px;
                 padding-bottom: 8px;
@@ -387,6 +459,8 @@ $lightblue:#419B7B;
                 justify-content: space-between;
                 font-size: 12px;
                 color: #555;
+                gap: 10px;
+                
 
 
                 h1{
@@ -395,6 +469,13 @@ $lightblue:#419B7B;
 
                 .file{
                     text-decoration: underline;
+                    font-weight: 500;
+                    font-size: 12px;
+                    color: rgb(29, 28, 28);
+                }
+                .file:hover{
+                    text-decoration: none;
+                    color: #267871;
                 }
 
                 .buttons{

@@ -42,7 +42,7 @@ export function Login() {
         <input type='password' placeholder='password' name='password' onChange={handleChange}></input>
         <button onClick={handleSubmit}>Login</button>
         {err && <p>{err}</p>}
-        <span>Don't you have an account? <Link to="/register" className='link'>SignUp</Link></span>
+        <span>Don't you have an account? <Link to="/register" className='link'>Register</Link></span>
       </form>
     </div>
   )

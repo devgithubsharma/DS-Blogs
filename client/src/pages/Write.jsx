@@ -94,6 +94,7 @@ export function Write () {
             />
             <label htmlFor="art">Art</label>
           </div>
+
           <div className="cat">
             <input
               type="radio"
@@ -105,17 +106,19 @@ export function Write () {
             />
             <label htmlFor="science">Science</label>
           </div>
+
           <div className="cat">
             <input
               type="radio"
-              checked={cat === "technology"}
+              checked={cat === "geopolitics"}
               name="cat"
-              value="technology"
-              id="technology"
+              value="geopolitics"
+              id="geopolitics"
               onChange={(e) => setCat(e.target.value)}
             />
-            <label htmlFor="technology">Technology</label>
+            <label htmlFor="geopolitics">Geopolitics</label>
           </div>
+
           <div className="cat">
             <input
               type="radio"
@@ -127,6 +130,7 @@ export function Write () {
             />
             <label htmlFor="cinema">Cinema</label>
           </div>
+
           <div className="cat">
             <input
               type="radio"
@@ -138,6 +142,7 @@ export function Write () {
             />
             <label htmlFor="design">Design</label>
           </div>
+          
           <div className="cat">
             <input
               type="radio"

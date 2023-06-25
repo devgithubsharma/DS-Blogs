@@ -6,7 +6,7 @@ import {Menu} from '../components/Menu'
 import axios from "axios";
 import moment from "moment";
 import { AuthContext } from "../context/authContext"
-import DOMPurify from "dompurify";
+
 
 export function Single (){
   const [post,setPost] = useState({});
@@ -20,7 +20,6 @@ export function Single (){
     const fetchData  = async () =>{
       try{
         const res = await axios.get(`/posts/${postId}`);
-        console.log(res)
         setPost(res.data)
       }
       catch(err){
@@ -40,10 +39,10 @@ export function Single (){
     }
   }
 
-  // const getText = (html) =>{
-  //   const doc = new DOMParser().parseFromString(html,"text/html")
-  //   return doc.body.textContent
-  // }
+  const getText = (html) =>{
+    const doc = new DOMParser().parseFromString(html,"text/html")
+    return doc.body.textContent
+  }
 
   return (
     <div className='single'>
@@ -57,7 +56,6 @@ export function Single (){
             <p>Posted {moment(post.date).fromNow()}</p>
           </div>
 
-          
           {currentUser.username===post.username && (<div className="edit">
           <Link to={`/write?edit=2`} state={post}>
           <img src={Edit} alt="" />
@@ -68,9 +66,7 @@ export function Single (){
 
       <h1>{post.title}</h1>
       <p>
-      dangerouslySetInnerHTML={{
-            __html: DOMPurify.sanitize(post.desc),
-          }}
+      {getText(post.desc)}
       </p>
       </div>
       <Menu cat={post.cat}/>

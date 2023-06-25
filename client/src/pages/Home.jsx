@@ -25,6 +25,7 @@ export function Home(){
     const doc = new DOMParser().parseFromString(html,"text/html")
     return doc.body.textContent
   }
+  
   return (
     <div className='home'>
       <div className="posts">

@@ -2,9 +2,9 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
-export function Menu({cat}) {
+export function Menu(props) {
   const [posts, setPosts] = useState([]);
- 
+  const {cat} = props;
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -17,7 +17,7 @@ export function Menu({cat}) {
     fetchData();
   }, [cat]);
   
- 
+ console.log(posts)
   return (
     <div className="menu">
       <h1>Other posts you may like</h1>

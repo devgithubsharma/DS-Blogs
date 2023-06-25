@@ -17,7 +17,7 @@ export function Menu(props) {
     fetchData();
   }, [cat]);
   
- console.log(posts)
+ 
   return (
     <div className="menu">
       <h1>Other posts you may like</h1>

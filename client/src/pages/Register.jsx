@@ -20,7 +20,7 @@ export function Register() {
   const handleSubmit = async (e) =>{
     e.preventDefault();
     try{
-      await axios.post("/auth/register",inputs);
+      await axios.post("https://ds-blogs.onrender.com/api/auth/register",inputs);
       navigate("/login")
       
 

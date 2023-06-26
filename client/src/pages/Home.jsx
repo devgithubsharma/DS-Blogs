@@ -10,7 +10,7 @@ export function Home(){
   useEffect(() => {
     const fetchData  = async () =>{
       try{
-        const res = await axios.get(`/posts${cat}`);
+        const res = await axios.get(`https://ds-blogs.onrender.com/api/posts${cat}`);
         setPosts(res.data)
       }
       catch(err){
@@ -36,7 +36,7 @@ export function Home(){
             <img src={`../upload/${post.img}`} alt="" />
           </div>
           <div className="content">
-            <Link className="link" to={`/post/${post.id}`}>
+            <Link className="link" to={`https://ds-blogs.onrender.com/api/post/${post.id}`}>
               <h1>{post.title}</h1>
             </Link>
             <p>{getText(post.desc)}</p>

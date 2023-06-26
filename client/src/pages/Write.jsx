@@ -34,14 +34,14 @@ export function Write () {
 
     try{
       state
-      ? await axios.put(`/posts/${state.id}`, {
+      ? await axios.put(`https://ds-blogs.onrender.com/api/posts/${state.id}`, {
         title,
         desc:value,
         cat,
         img: file ? imgUrl : "",
 
       })
-      : await axios.post("/posts", {
+      : await axios.post("https://ds-blogs.onrender.com/api/posts", {
         title,
         desc:value,
         cat,

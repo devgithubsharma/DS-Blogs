@@ -25,7 +25,7 @@ export function Menu(props) {
       {posts.map((post) => (
         <div className="post" key={post.id}>
           <img src={`../upload/${post?.img}`} alt="" />
-          <h2 >{post.title}</h2>
+          <h2 ><Link style={{color:"#136a8a",textDecoration:"none"}} to={`/post/${post.id}`}>{post.title}</Link></h2>
           <button>Read More</button>
         </div>
       ))}

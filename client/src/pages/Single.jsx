@@ -19,7 +19,7 @@ export function Single (){
   useEffect(() => {
     const fetchData  = async () =>{
       try{
-        const res = await axios.get(`/posts/${postId}`);
+        const res = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/posts/${postId}`);
         setPost(res.data)
       }
       catch(err){
@@ -31,7 +31,7 @@ export function Single (){
 
   const handleDelete = async ()=>{
     try{
-      await axios.delete(`/posts/${postId}`)
+      await axios.delete(`${process.env.REACT_APP_BACKEND_URL}/posts/${postId}`)
       navigate("/")
     }
     catch(err){

@@ -19,7 +19,7 @@ export function Write () {
     try {
       const formData = new FormData();
       formData.append("file", file);
-      const res = await axios.post("/upload", formData);
+      const res = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/upload`, formData);
       return res.data;
 
     } catch (err) {
@@ -34,14 +34,14 @@ export function Write () {
 
     try{
       state
-      ? await axios.put(`/posts/${state.id}`, {
+      ? await axios.put(`${process.env.REACT_APP_BACKEND_URL}/posts/${state.id}`, {
         title,
         desc:value,
         cat,
         img: file ? imgUrl : "",
 
       })
-      : await axios.post("/posts", {
+      : await axios.post(`${process.env.REACT_APP_BACKEND_URL}/posts`, {
         title,
         desc:value,
         cat,

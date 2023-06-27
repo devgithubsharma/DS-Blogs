@@ -1,11 +1,8 @@
 import mysql from 'mysql';
 
-const db = mysql.createConnection({
-    host:"localhost",
-    user:"root",
-    password:"password",
-    database:"blog",
-    port:8800
-})
+const urlDB = `mysql://${process.env.MYSQLUSER}:${process.env.MYSQLPASSWORD}@${process.env.MYSQLHOST}:${process.env.MYSQLPORT}
+/${process.env.MYSQLDATABASE}`;
+
+const db = mysql.createConnection(urlDB)
 
 export default db;

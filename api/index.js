@@ -1,7 +1,6 @@
 import express from "express";
 import authRoutes from "./routes/auth.js";
 import postRoutes from "./routes/posts.js";
-import userRoutes from "./routes/users.js";
 import cookie from "cookie-parser";
 import multer from "multer";
 import path from "path";
@@ -29,7 +28,7 @@ const storage = multer.diskStorage({
   
 app.use("/api/auth",authRoutes);
 app.use("/api/posts",postRoutes);
-app.use("/api/users",userRoutes);
+
 
 app.listen(4200,()=>{
     console.log("Connected")

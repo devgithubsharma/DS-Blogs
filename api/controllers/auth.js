@@ -1,5 +1,5 @@
 import db from '../db.js'
-import bcrypt from "bcrypt"
+import bcrypt from "bcryptjs"
 import jwt from "jsonwebtoken";
 import cookie from "cookie-parser"
 

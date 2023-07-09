@@ -26,7 +26,7 @@ export const addPost = (req,res) =>{
     const token = req.cookies.access_token
     if(!token) return res.status(401).json("Not authenticated!")
 
-    jwt.verify(token,process.env.SECRET_KEY,(err,userInfo)=>{
+    jwt.verify(token,"jwtdev",(err,userInfo)=>{
         if(err) return res.status(403).json("Token is not Valid")
 
         const q = "INSERT INTO posts(`title`,`desc`,`img`, `cat`, `date`, `uid`) VALUES (?)";
@@ -54,7 +54,7 @@ export const deletePost = (req,res) =>{
     const token = req.cookies.access_token
     if(!token) return res.status(401).json("Not authenticated!")
 
-    jwt.verify(token,process.env.SECRET_KEY,(err,userInfo)=>{
+    jwt.verify(token,"jwtdev",(err,userInfo)=>{
         if(err) return res.status(403).json("Token is not Valid")
 
         const postId = req.params.id;
@@ -72,7 +72,7 @@ export const updatePost = (req,res) =>{
     const token = req.cookies.access_token
     if(!token) return res.status(401).json("Not authenticated!")
 
-    jwt.verify(token,process.env.SECRET_KEY,(err,userInfo)=>{
+    jwt.verify(token,"jwtdev",(err,userInfo)=>{
         if(err) return res.status(403).json("Token is not Valid")
 
         const postId = req.params.id

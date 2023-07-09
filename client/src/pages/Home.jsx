@@ -10,7 +10,7 @@ export function Home(){
   useEffect(() => {
     const fetchData  = async () =>{
       try{
-        const res = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/posts${cat}`);
+        const res = await axios.get(`/posts${cat}`);
         setPosts(res.data)
       }
       catch(err){
@@ -20,13 +20,12 @@ export function Home(){
     fetchData();
   },[cat])
 
-
-
   const getText = (html) =>{
     const doc = new DOMParser().parseFromString(html,"text/html")
     return doc.body.textContent
   }
-  
+
+  console.log(posts)
   return (
     <div className='home'>
       <div className="posts">
@@ -36,7 +35,7 @@ export function Home(){
             <img src={`../upload/${post.img}`} alt="" />
           </div>
           <div className="content">
-            <Link className="link" to={`${process.env.REACT_APP_BACKEND_URL}/post/${post.id}`}>
+            <Link className="link" to={`/post/${post.id}`}>
               <h1>{post.title}</h1>
             </Link>
             <p>{getText(post.desc)}</p>
